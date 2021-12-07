@@ -75,6 +75,10 @@ namespace Blackjack0._3
             StreamReader sr = new StreamReader(@"C:\blackjackHistory\player.txt");
             textBoxPlayerHistory.Text = sr.ReadToEnd();
             sr.Close();
+
+            buttonDeal.Visible = false;
+            buttonHit.Visible = true;
+            buttonStick.Visible = true;
         }
 
         private void buttonRestart_Click(object sender, EventArgs e)
@@ -89,6 +93,23 @@ namespace Blackjack0._3
 
             labelUserScore.Text = playerTotalScore.ToString();
             labelDealerScore.Text = dealerTotalScore.ToString();
+        }
+
+        private void buttonHit_Click(object sender, EventArgs e)
+        {
+            int playerHit;
+
+            playerHit = Hit();
+
+            playerTotalScore += playerHit;
+
+            labelUserScore.Text = playerTotalScore.ToString();
+
+            
+
+
+
+
         }
     }
 }

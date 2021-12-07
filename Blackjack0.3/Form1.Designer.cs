@@ -59,6 +59,7 @@ namespace Blackjack0._3
             this.buttonHit.Text = "Hit Me";
             this.buttonHit.UseVisualStyleBackColor = true;
             this.buttonHit.Visible = false;
+            this.buttonHit.Click += new System.EventHandler(this.buttonHit_Click);
             // 
             // buttonStick
             // 
