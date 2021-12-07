@@ -28,6 +28,13 @@ namespace Blackjack0._3
             genRand = r.Next(1, 11);
             return genRand;
         }
+        static int Hit() //returns number between 1 and 10 so dealer cant go over 21
+        {
+            int genRand;
+            Random r = new Random(Guid.NewGuid().GetHashCode());
+            genRand = r.Next(1, 10);
+            return genRand;
+        }
        
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,8 +51,14 @@ namespace Blackjack0._3
             playerDeal = Deal();
             dealerDeal = Deal();
 
-            labelUserScore.Text = playerDeal.ToString();
-            labelDealerScore.Text = dealerDeal.ToString();
+            //updates global scores
+            playerTotalScore = playerDeal;
+            dealerTotalScore = dealerDeal;
+
+
+            //outputs global variable scores
+            labelUserScore.Text = playerTotalScore.ToString();
+            labelDealerScore.Text = dealerTotalScore.ToString();
         }
     }
 }
