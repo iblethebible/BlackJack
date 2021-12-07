@@ -37,6 +37,7 @@ namespace Blackjack0._3
             this.label2 = new System.Windows.Forms.Label();
             this.buttonRestart = new System.Windows.Forms.Button();
             this.labelDealerScore = new System.Windows.Forms.Label();
+            this.textBoxPlayerHistory = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonDeal
@@ -103,15 +104,23 @@ namespace Blackjack0._3
             this.buttonRestart.TabIndex = 7;
             this.buttonRestart.Text = "Restart";
             this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
             // 
             // labelDealerScore
             // 
             this.labelDealerScore.AutoSize = true;
             this.labelDealerScore.Location = new System.Drawing.Point(572, 141);
             this.labelDealerScore.Name = "labelDealerScore";
-            this.labelDealerScore.Size = new System.Drawing.Size(35, 13);
+            this.labelDealerScore.Size = new System.Drawing.Size(0, 13);
             this.labelDealerScore.TabIndex = 8;
-            this.labelDealerScore.Text = "label3";
+            // 
+            // textBoxPlayerHistory
+            // 
+            this.textBoxPlayerHistory.Location = new System.Drawing.Point(45, 21);
+            this.textBoxPlayerHistory.Multiline = true;
+            this.textBoxPlayerHistory.Name = "textBoxPlayerHistory";
+            this.textBoxPlayerHistory.Size = new System.Drawing.Size(155, 99);
+            this.textBoxPlayerHistory.TabIndex = 9;
             // 
             // Form1
             // 
@@ -119,6 +128,7 @@ namespace Blackjack0._3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxPlayerHistory);
             this.Controls.Add(this.labelDealerScore);
             this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.label2);
@@ -146,6 +156,7 @@ namespace Blackjack0._3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonRestart;
         private System.Windows.Forms.Label labelDealerScore;
+        private System.Windows.Forms.TextBox textBoxPlayerHistory;
     }
 }
 
