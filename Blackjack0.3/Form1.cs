@@ -17,6 +17,11 @@ namespace Blackjack0._3
         int playerTotalScore;
         int dealerTotalScore;
         int maxScore;
+
+        //Global array of players card history
+        int[] playerCardHistory = new int[5];
+        //global array of dealer history
+        int[] dealerCardHistory = new int[5];
         public Form1()
         {
             InitializeComponent();
@@ -54,8 +59,13 @@ namespace Blackjack0._3
             playerDeal = Deal();
             dealerDeal = Deal();
 
+            
             //get second player card
             playerDeal2 = Deal();
+
+            //add player cards to array
+            playerCardHistory[0] = playerDeal;
+            playerCardHistory[1] = playerDeal2;
 
             //updates global scores
             playerTotalScore = playerDeal + playerDeal2;
@@ -66,15 +76,7 @@ namespace Blackjack0._3
             labelUserScore.Text = playerTotalScore.ToString();
             labelDealerScore.Text = dealerTotalScore.ToString();
 
-            //Output history to text file
-            StreamWriter sw = new StreamWriter(@"C:\blackjackHistory\player.txt");
-            sw.WriteLine(playerDeal);
-            sw.WriteLine(playerDeal2);
-            sw.Close();
-
-            StreamReader sr = new StreamReader(@"C:\blackjackHistory\player.txt");
-            textBoxPlayerHistory.Text = sr.ReadToEnd();
-            sr.Close();
+          
 
             buttonDeal.Visible = false;
             buttonHit.Visible = true;
@@ -100,10 +102,19 @@ namespace Blackjack0._3
             int playerHit;
 
             playerHit = Hit();
+            //add to array------How do i add to the next element?
+            playerCardHistory[2] = playerHit;   
 
+
+            //update global player score with hit card
             playerTotalScore += playerHit;
 
             labelUserScore.Text = playerTotalScore.ToString();
+
+
+            textBoxPlayerHistory.Text = playerCardHistory.ToString();
+
+
 
             
 
