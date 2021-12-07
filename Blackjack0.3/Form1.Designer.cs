@@ -37,7 +37,8 @@ namespace Blackjack0._3
             this.label2 = new System.Windows.Forms.Label();
             this.buttonRestart = new System.Windows.Forms.Button();
             this.labelDealerScore = new System.Windows.Forms.Label();
-            this.textBoxPlayerHistory = new System.Windows.Forms.TextBox();
+            this.listBoxPlayerHistory = new System.Windows.Forms.ListBox();
+            this.listBoxDealerHistory = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonDeal
@@ -115,13 +116,21 @@ namespace Blackjack0._3
             this.labelDealerScore.Size = new System.Drawing.Size(0, 13);
             this.labelDealerScore.TabIndex = 8;
             // 
-            // textBoxPlayerHistory
+            // listBoxPlayerHistory
             // 
-            this.textBoxPlayerHistory.Location = new System.Drawing.Point(45, 21);
-            this.textBoxPlayerHistory.Multiline = true;
-            this.textBoxPlayerHistory.Name = "textBoxPlayerHistory";
-            this.textBoxPlayerHistory.Size = new System.Drawing.Size(155, 99);
-            this.textBoxPlayerHistory.TabIndex = 9;
+            this.listBoxPlayerHistory.FormattingEnabled = true;
+            this.listBoxPlayerHistory.Location = new System.Drawing.Point(70, 12);
+            this.listBoxPlayerHistory.Name = "listBoxPlayerHistory";
+            this.listBoxPlayerHistory.Size = new System.Drawing.Size(120, 95);
+            this.listBoxPlayerHistory.TabIndex = 10;
+            // 
+            // listBoxDealerHistory
+            // 
+            this.listBoxDealerHistory.FormattingEnabled = true;
+            this.listBoxDealerHistory.Location = new System.Drawing.Point(464, 12);
+            this.listBoxDealerHistory.Name = "listBoxDealerHistory";
+            this.listBoxDealerHistory.Size = new System.Drawing.Size(120, 95);
+            this.listBoxDealerHistory.TabIndex = 11;
             // 
             // Form1
             // 
@@ -129,7 +138,8 @@ namespace Blackjack0._3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxPlayerHistory);
+            this.Controls.Add(this.listBoxDealerHistory);
+            this.Controls.Add(this.listBoxPlayerHistory);
             this.Controls.Add(this.labelDealerScore);
             this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.label2);
@@ -157,7 +167,8 @@ namespace Blackjack0._3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonRestart;
         private System.Windows.Forms.Label labelDealerScore;
-        private System.Windows.Forms.TextBox textBoxPlayerHistory;
+        private System.Windows.Forms.ListBox listBoxPlayerHistory;
+        private System.Windows.Forms.ListBox listBoxDealerHistory;
     }
 }
 

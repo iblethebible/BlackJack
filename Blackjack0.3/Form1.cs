@@ -67,6 +67,9 @@ namespace Blackjack0._3
             playerCardHistory[0] = playerDeal;
             playerCardHistory[1] = playerDeal2;
 
+            //add dealer card to array
+            dealerCardHistory[0] = dealerDeal;
+
             //updates global scores
             playerTotalScore = playerDeal + playerDeal2;
             dealerTotalScore = dealerDeal;
@@ -76,7 +79,15 @@ namespace Blackjack0._3
             labelUserScore.Text = playerTotalScore.ToString();
             labelDealerScore.Text = dealerTotalScore.ToString();
 
-          
+
+            //loop twice displaying first 2 card scores in array into list
+            int i = 0;
+            for (i = 0;i<2;i++)
+            {
+                listBoxPlayerHistory.Items.Insert(i, playerCardHistory[i]);
+            }
+
+            listBoxDealerHistory.Items.Insert(0, dealerCardHistory[0]);
 
             buttonDeal.Visible = false;
             buttonHit.Visible = true;
@@ -89,7 +100,8 @@ namespace Blackjack0._3
             buttonHit.Visible = false;
             buttonStick.Visible = false;
 
-            textBoxPlayerHistory.Text = "";
+            listBoxPlayerHistory.Items.Clear();
+
             playerTotalScore = 0;
             dealerTotalScore = 0;
 
@@ -112,8 +124,8 @@ namespace Blackjack0._3
             labelUserScore.Text = playerTotalScore.ToString();
 
 
-            textBoxPlayerHistory.Text = playerCardHistory.ToString();
-
+           //adds each subsequent hit to new line on list
+           listBoxPlayerHistory.Items.Add(playerHit);
 
 
             
